@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Приветствие</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<img id="wall" src="" alt="">
+<div id="wall-overlay"></div>
+
+<div id="main" class="layer">
+  <div id="clock-wrap">
+    <div id="clock">--:--</div>
+    <div id="date"></div>
+    <div id="weather">
+      <span id="w-icon"></span>
+      <span id="w-temp"></span>
+      <span id="w-desc"></span>
+    </div>
+    <div id="greeting"></div>
+  </div>
+</div>
+
+<div id="saver" class="layer hidden">
+  <div id="saver-clock">--:--</div>
+  <div id="saver-date"></div>
+</div>
+
+<div id="settings" class="layer hidden">
+  <div class="panel">
+    <h2>Настройки</h2>
+    <label>Имя <input id="s-name" type="text" maxlength="24"></label>
+    <label>Широта <input id="s-lat" type="text"></label>
+    <label>Долгота <input id="s-lon" type="text"></label>
+    <label>Голосовое приветствие <input id="s-voice" type="checkbox"></label>
+    <label>Час приветствия <input id="s-hour" type="number" min="0" max="23"></label>
+    <label>Таймер заставки, мин <input id="s-idle" type="number" min="1" max="120"></label>
+    <label>Обои
+      <select id="s-wall">
+        <option value="bing">Bing (фото дня)</option>
+        <option value="random">Случайное фото</option>
+        <option value="gradient">Градиент (небо)</option>
+      </select>
+    </label>
+    <div class="row">
+      <button id="s-save">Сохранить</button>
+      <button id="s-test">Проверить голос</button>
+      <button id="s-close">Закрыть</button>
+    </div>
+    <p class="hint">Меню: клавиша M или Menu на пульте · T — тест приветствия</p>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

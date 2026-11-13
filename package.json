@@ -1,0 +1,11 @@
+{
+  "name": "tvgreet",
+  "version": "1.0.0",
+  "description": "Голосовое приветствие, погода, часы, динамические обои и заставка",
+  "packageType": "app",
+  "appName": "Приветствие",
+  "appPath": "app/index.html",
+  "keys": ["Menu", "Tools", "ColorF0Red"],
+  "serviceFile": "service.js",
+  "evaluateScriptOnDocumentStart": false
+}
