@@ -11,6 +11,17 @@ html, body {
   user-select: none;
 }
 
+#vid-wall {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  z-index: 0;
+  transition: opacity 1.5s ease;
+}
+
 #anim-wall {
   position: fixed;
   inset: 0;
@@ -20,14 +31,13 @@ html, body {
   z-index: 0;
 }
 
-#yt-wall {
+#yt-frame {
   position: fixed;
   top: -5%;
   left: -5%;
   width: 110%;
   height: 110%;
   border: none;
-  display: none;
   z-index: 0;
   pointer-events: none;
 }
@@ -54,6 +64,27 @@ html, body {
   );
   pointer-events: none;
   z-index: 2;
+}
+
+#btn-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  padding: 12px 28px;
+  font-size: 22px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s;
+}
+
+#btn-back:hover, #btn-back:focus {
+  background: rgba(255,255,255,0.35);
+  outline: 2px solid #fff;
 }
 
 .layer {
@@ -225,4 +256,21 @@ html, body {
   margin-top: 22px;
   font-size: 20px;
   opacity: .6;
+}
+
+#debug {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.85);
+  color: #0f0;
+  font-size: 16px;
+  font-family: monospace;
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 99999;
+  max-width: 420px;
+  line-height: 1.5;
+  white-space: pre-line;
+  display: none;
 }

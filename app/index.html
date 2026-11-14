@@ -6,10 +6,12 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<video id="vid-wall" loop muted playsinline></video>
 <canvas id="anim-wall"></canvas>
 <img id="wall" src="" alt="">
-<iframe id="yt-wall" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <div id="wall-overlay"></div>
+
+<button id="btn-back">← Меню</button>
 
 <div id="main" class="layer">
   <div id="clock-wrap">
@@ -37,29 +39,42 @@
     <label>Приветствие <input id="s-greeting" type="text" maxlength="40"></label>
     <label>Широта <input id="s-lat" type="text"></label>
     <label>Долгота <input id="s-lon" type="text"></label>
-    <label>Голосовое приветствие <input id="s-voice" type="checkbox"></label>
-    <label>Таймер заставки, мин <input id="s-idle" type="number" min="1" max="120"></label>
+    <label>Сдвиг времени, ч <input id="s-tz" type="number" min="-12" max="12"></label>
+    <label>Голос <input id="s-voice" type="checkbox"></label>
+    <label>Заставка, мин <input id="s-idle" type="number" min="1" max="120"></label>
     <label>Обои
       <select id="s-wall">
-        <option value="video">YouTube-видео (реальные кадры)</option>
-        <option value="live">Живые обои (небо, звёзды)</option>
-        <option value="photo">Случайное фото</option>
+        <option value="video">Видео-фон</option>
+        <option value="live">Живые обои</option>
+        <option value="photo">Фото</option>
         <option value="gradient">Градиент</option>
       </select>
     </label>
+    <label>Категория видео
+      <select id="s-videopreset">
+        <option value="ocean">🌊 Океан</option>
+        <option value="fireplace">🔥 Камин</option>
+        <option value="rain">🌧 Дождь</option>
+        <option value="snow">❄️ Снег</option>
+        <option value="space">🌌 Космос</option>
+        <option value="forest">🌲 Лес</option>
+        <option value="custom">⭐ Свои ссылки</option>
+      </select>
+    </label>
     <label>Смена видео, мин <input id="s-videoint" type="number" min="1" max="120"></label>
-    <label>Видео (ссылки YouTube, каждое с новой строки)
-      <textarea id="s-videos" rows="4" placeholder="https://www.youtube.com/watch?v=..."></textarea>
+    <label>Свои ссылки (по одной в строке)
+      <textarea id="s-videos" rows="3"></textarea>
     </label>
     <div class="row">
       <button id="s-save">Сохранить</button>
-      <button id="s-test">Проверить голос</button>
+      <button id="s-test">Голос</button>
       <button id="s-close">Закрыть</button>
     </div>
-    <p class="hint">Жёлтая — настройки · Зелёная — приветствие · Красная — следующий ролик</p>
+    <p class="hint">↑↓ — навигация · OK — выбор · Жёлтая — настройки · Красная — следующий ролик · Зелёная — приветствие</p>
   </div>
 </div>
 
+<div id="debug"></div>
 <script src="js/app.js"></script>
 </body>
 </html>
